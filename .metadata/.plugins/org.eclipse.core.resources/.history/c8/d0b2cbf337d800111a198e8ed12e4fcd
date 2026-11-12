@@ -1,0 +1,36 @@
+/*
+ * Program.h
+ *
+ *  Created on: Oct 30, 2026
+ *      Author: filip
+ */
+
+#ifndef PROGRAM_H_
+#define PROGRAM_H_
+#include <iostream>
+#include "HNode.h"
+#include "HTree.h"
+#include <map>
+#include <string>
+#include <fstream>
+
+
+class Program {
+private:
+	std::string fname;
+	int nizFrekvencija[256] {0};
+	HTree stablo;
+
+public:
+	Program(std::string fnameUlazni, std::string fnameIzlazni);
+	~Program();
+
+	void generisiKodove(HNode* cvor, std::string trenutniKod, std::map<char, std::string>& tabelaKodova);
+	void kodirajUFajl(std::string ulazniFajl, std::string izlazniFajl);
+	void dekodirajIzFajla(std::string ulazniKompresovaniFajl, std::string izlazniDekodiraniFajl);
+
+
+
+};
+
+#endif /* PROGRAM_H_ */

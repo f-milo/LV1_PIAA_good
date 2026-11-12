@@ -1,0 +1,18 @@
+/*
+ * HTree.cpp
+ *
+ *  Created on: Nov 4, 2026
+ *      Author: filip
+ */
+
+#include "HTree.h"
+
+HTree::HTree() {
+	// TODO Auto-generated constructor stub
+
+}
+
+HTree::~HTree() {
+	// TODO Auto-generated destructor stub
+}
+

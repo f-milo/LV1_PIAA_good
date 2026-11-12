@@ -1,0 +1,96 @@
+/*
+ * Program.cpp
+ *
+ *  Created on: Oct 30, 2026
+ *      Author: filip
+ */
+
+#include "Program.h"
+
+
+Program::Program(std::string fnameUlazni, std::string fnameIzlazni) {
+	this->fname = fname;
+
+	std::ifstream f(fnameUlazni, std::ios::binary);
+
+	if(!f.is_open())
+	{
+		std::cout << "Neuspesno otvoren fajl";
+		return;
+	}
+
+	char c;
+
+	while(f.get(c))
+	{
+		nizFrekvencija[static_cast<unsigned char>(c)]++;
+	}
+
+	f.close();
+
+	stablo.kreirajStablo(nizFrekvencija);
+
+	kodirajUFajl(fnameUlazni, fnameIzlazni);
+}
+
+Program::~Program() {
+}
+
+void Program::generisiKodove(HNode *n1, std::string trenutniKod,
+		std::map<char, std::string> &tabelaKodova)
+{
+	if(n1 == nullptr)
+		return;
+
+
+	if(n1->getLevi() == nullptr && n1->getDesni() == nullptr)
+	{
+		if(trenutniKod.empty())
+		{
+			trenutniKod = "0";
+		}
+		tabelaKodova[n1->getZnak()] = trKod;
+		return;
+	}
+
+	generisiKodove(n1.getLevi(), trenutniKod + "0", tabelaKodova);
+	generisiKodove(n1->getDesni(), trenutniKod + "1", tabelaKodova);
+}
+
+void Program::kodirajUFajl(std::string ulazniFajl, std::string izlazniFajl) {
+	map<char, std::string> tabelaKodova;
+
+	generisiKodove(stablo.getKoren(), "", tabelaKodova);
+
+	std::ifstream ulaz(ulazniFajl, ios::binary);
+	if(!ulaz.is_open())
+	{
+		std::cout << "Greska pri otvaranju fajla";
+		return;
+	}
+
+	BitWriter writer(izlazniFajl);
+
+	for(int i=0; i<256; i++)
+	{
+		writer.upisiInt(nizFrekvencija[i]);
+	}
+	char c;
+	while(ulaz.get(c))
+	{
+		string kod = tabelaKodova[c];
+		writer.dodaj
+	}
+	}
+}
+
+void Program::dekodirajIzFajla(std::string ulazniKompresovaniFajl, std::string izlazniDekodiraniFajl)
+{
+	int ucitaneFrekvencije[256] = {0};
+	unsigned long ukupanBrojKaraktera = 0;
+
+	for(int i=0; i<256; i++)
+	{
+
+	}
+}

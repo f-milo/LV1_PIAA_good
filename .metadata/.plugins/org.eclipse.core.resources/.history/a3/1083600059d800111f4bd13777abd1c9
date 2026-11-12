@@ -1,0 +1,156 @@
+#include "Program.h"
+
+#include <fstream>
+#include <iostream>
+#include <map>
+#include <string>
+
+Program::Program(std::string fnameUlazni, std::string fnameIzlazni) {
+    fname = fnameUlazni;
+
+    std::ifstream f(fnameUlazni, std::ios::binary);
+
+    if (!f.is_open()) {
+        std::cout << "Neuspesno otvoren fajl" << std::endl ;
+        return;
+    }
+
+    char c;
+    while (f.get(c)) {
+        nizFrekvencija[(c)]++;
+    }
+
+    f.close();
+
+    stablo.kreirajStablo(nizFrekvencija);
+    kodirajUFajl(fnameUlazni, fnameIzlazni);
+}
+
+Program::~Program() {
+}
+
+void Program::generisiKodove(
+    HNode* n1,
+    std::string trenutniKod,
+    std::map<char, std::string>& tabelaKodova
+) {
+    if (n1 == nullptr) {
+        return;
+    }
+
+    if (n1->getLevi() == nullptr && n1->getDesni() == nullptr) {
+        if (trenutniKod.empty()) {
+            trenutniKod = "0";
+        }
+
+        tabelaKodova[n1->getZnak()] = trenutniKod;
+        return;
+    }
+
+    generisiKodove(n1->getLevi(), trenutniKod + "0", tabelaKodova);
+    generisiKodove(n1->getDesni(), trenutniKod + "1", tabelaKodova);
+}
+
+void Program::kodirajUFajl(
+    std::string ulazniFajl,
+    std::string izlazniFajl
+) {
+    std::map<char, std::string> tabelaKodova;
+
+    generisiKodove(stablo.getKoren(), "", tabelaKodova);
+
+    std::ifstream ulaz(ulazniFajl, std::ios::binary);
+    if (!ulaz.is_open()) {
+        std::cout << "Greska pri otvaranju ulaznog fajla" << std::endl;
+        return;
+    }
+
+    BitWriter writer(izlazniFajl);
+
+    for (int i = 0; i < 256; i++) {
+        writer.upisiInt(nizFrekvencija[i]);
+    }
+
+    char c;
+    while (ulaz.get(c)) {
+        std::string kod = tabelaKodova[c];
+        writer.dodajBitoveIzStringa(kod);
+    }
+
+    writer.zatvoriFajl();
+    ulaz.close();
+}
+
+void Program::dekodirajIzFajla(
+    std::string kompresovaniFajl,
+    std::string izlazniDekodovaniFajl
+) {
+    BitReader reader(kompresovaniFajl);
+
+    int ucitaneFrekvencije[256] = {};
+    long long ukupanBrojKaraktera = 0;
+
+    for (int i = 0; i < 256; i++) {
+        ucitaneFrekvencije[i] = reader.procitajInt();
+        ukupanBrojKaraktera += ucitaneFrekvencije[i];
+    }
+
+    HTree dekodirajuceStablo;
+    dekodirajuceStablo.kreirajStablo(ucitaneFrekvencije);
+
+    std::ofstream izlaz(izlazniDekodovaniFajl, std::ios::binary);
+    if (!izlaz.is_open()) {
+        std::cout << "Greska pri otvaranju izlaznog fajla" << std::endl;
+        reader.zatvoriFajl();
+        return;
+    }
+
+    HNode* koren = dekodirajuceStablo.getKoren();
+
+    if (koren == nullptr) {
+        izlaz.close();
+        reader.zatvoriFajl();
+        return;
+    }
+
+    if (koren->getLevi() == nullptr && koren->getDesni() == nullptr) {
+        for (long long i = 0; i < ukupanBrojKaraktera; i++) {
+            izlaz.put(koren->getZnak());
+        }
+
+        izlaz.close();
+        reader.zatvoriFajl();
+        return;
+    }
+
+    HNode* trenutniCvor = koren;
+    long long karakteraUpisano = 0;
+
+    while (karakteraUpisano < ukupanBrojKaraktera) {
+        int bit = reader.procitajBit();
+
+        if (bit == -1) {
+            break;
+        }
+
+        if (bit == 0) {
+            trenutniCvor = trenutniCvor->getLevi();
+        } else {
+            trenutniCvor = trenutniCvor->getDesni();
+        }
+
+        if (trenutniCvor == nullptr) {
+            break;
+        }
+
+        if (trenutniCvor->getLevi() == nullptr &&
+            trenutniCvor->getDesni() == nullptr) {
+            izlaz.put(trenutniCvor->getZnak());
+            karakteraUpisano++;
+            trenutniCvor = koren;
+        }
+    }
+
+    izlaz.close();
+    reader.zatvoriFajl();
+}

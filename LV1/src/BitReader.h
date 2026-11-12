@@ -1,0 +1,35 @@
+/*
+ * BitReader.h
+ *
+ *  Created on: Oct 31, 2026
+ *      Author: filip
+ */
+
+#ifndef BITREADER_H_
+#define BITREADER_H_
+
+#include <iostream>
+#include <fstream>
+#include <string>
+
+class BitReader
+{
+private:
+    std::ifstream file;
+    unsigned char bafer = 0;
+    int brojBitovaUBaferu = 0;
+
+    void ucitajNoviBajt();
+
+public:
+    BitReader(const std::string& imeFajla);
+    ~BitReader();
+
+    int procitajBit();
+    int procitajInt();
+
+	void zatvoriFajl();
+
+};
+
+#endif /* BITREADER_H_ */

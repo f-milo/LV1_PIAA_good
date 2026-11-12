@@ -1,0 +1,23 @@
+/*
+ * HTree.cpp
+ *
+ *  Created on: Oct 29, 2026
+ *      Author: filip
+ */
+
+#include "HTree.h"
+
+HTree::HTree() {
+	koren = nullptr;
+	// TODO Auto-generated constructor stub
+
+}
+
+HTree::~HTree() {
+	// TODO Auto-generated destructor stub
+}
+
+void HTree::kreirajStablo(int *nizFrekvencija) {
+	std::vector<HNode*> nizKorisnih;
+
+}

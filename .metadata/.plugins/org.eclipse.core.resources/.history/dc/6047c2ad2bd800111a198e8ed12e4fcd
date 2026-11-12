@@ -1,0 +1,14 @@
+/*
+ * Program.h
+ *
+ *  Created on: Nov 4, 2026
+ *      Author: filip
+ */
+
+#ifndef PROGRAM_H_
+#define PROGRAM_H_
+
+class Program {
+};
+
+#endif /* PROGRAM_H_ */

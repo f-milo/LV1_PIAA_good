@@ -1,0 +1,43 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Oct 29, 2026
+ *      Author: filip
+ */
+
+#include <iostream>
+#include <filesystem>
+
+#include "Program.h"
+
+int main()
+{
+	std::string fajl = "LoremIpsum/10k";
+    std::string ulazni = fajl+".txt";
+    std::string izlazni = ulazni + ".huf"; //treba fajl + huf// ali nece nesto
+    std::string dekodirani = ulazni + "_dekodirani.txt"; //treba fajl + dekodirani// nece nesto
+
+    std::cout << "Zapoceto enkodiranje: " << ulazni << std::endl;
+    Program p(ulazni, ulazni + ".hff");
+
+    double velicinaUlaznog = std::filesystem::file_size(ulazni);
+    double velicinaKompresovanog = std::filesystem::file_size(izlazni);
+
+    double stepenKompresije = 100.0 * (1.0 - (static_cast<double>(velicinaKompresovanog) / velicinaUlaznog));
+
+    std::cout << "\n================ REZULTATI KOMPRESIJE ================\n";
+    std::cout << "Originalna velicina:              " << velicinaUlaznog << " bajtova\n";
+    std::cout << "Kompresovana velicina (sa recnikom): " << velicinaKompresovanog << " bajtova\n";
+    std::cout << "Stepen kompresije:                " << stepenKompresije << " %\n";
+
+
+    std::cout << "Zapoceto Dekodiranje:" << std::endl;
+    p.dekodirajIzFajla(izlazni, dekodirani);
+    std::cout << "Dekodiranje uspesno zavrseno. Izlaz: " << dekodirani << "\n";
+
+    return 0;
+}
+
+
+
+

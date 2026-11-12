@@ -1,0 +1,14 @@
+/*
+ * BitReader.h
+ *
+ *  Created on: Nov 4, 2026
+ *      Author: filip
+ */
+
+#ifndef BITREADER_H_
+#define BITREADER_H_
+
+class BitReader {
+};
+
+#endif /* BITREADER_H_ */

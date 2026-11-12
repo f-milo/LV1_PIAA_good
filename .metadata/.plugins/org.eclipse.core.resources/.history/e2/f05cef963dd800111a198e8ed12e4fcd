@@ -1,0 +1,63 @@
+/*
+ * BitReader.cpp
+ *
+ *  Created on: Oct 31, 2026
+ *      Author: filip
+ */
+
+#include "BitReader.h"
+
+
+BitReader::BitReader(const std::string &imeFajla)
+{
+    file.open(imeFajla, std::ios::binary);
+    if (!file.is_open()) {
+        std::cout << "Greska pri otvaranju kompresovanog fajla za citanje!" << std::endl;
+    }
+}
+
+BitReader::~BitReader()
+{
+    if (file.is_open())
+    {
+        file.close();
+    }
+}
+
+int BitReader::procitajBit()
+{
+    if (brojBitovaUBaferu == 0)
+    {
+        ucitajNoviBajt();
+        if (brojBitovaUBaferu == 0)
+        	return -1; // Kraj fajla
+    }
+
+    brojBitovaUBaferu--;
+    int bit = (bafer >> brojBitovaUBaferu) & 1;
+    return bit;
+}
+
+int BitReader::procitajInt()
+{
+    int broj = 0;
+    for (int i = 0; i < 4; i++) {
+        char c;
+        if (file.get(c)) {
+            broj = (broj << 8) | static_cast<unsigned char>(c);
+        }
+    }
+    return broj;
+}
+
+void BitReader::ucitajNoviBajt()
+{
+    char c;
+    if (file.get(c)) {
+        bafer = static_cast<unsigned char>(c);
+        brojBitovaUBaferu = 8;
+    } else {
+        brojBitovaUBaferu = 0;
+    }
+}
+

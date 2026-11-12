@@ -1,0 +1,29 @@
+/*
+ * BitWriter.cpp
+ *
+ *  Created on: Nov 4, 2026
+ *      Author: filip
+ */
+
+#include "BitWriter.h"
+
+BitWriter::BitWriter(const std::string &imeFajla) {
+}
+
+BitWriter::~BitWriter() {
+}
+
+void BitWriter::dodajBitUBafer(int bit) {
+}
+
+void BitWriter::dodajBitoveIzStringa(const std::string &bitovi) {
+}
+
+void BitWriter::upisiBaferUFajl() {
+}
+
+void BitWriter::upisiPreostaleBitove() {
+}
+
+void BitWriter::upisiInt(int broj) {
+}

@@ -1,0 +1,28 @@
+/*
+ * HTree.h
+ *
+ *  Created on: Oct 29, 2026
+ *      Author: filip
+ */
+
+#ifndef HTREE_H_
+#define HTREE_H_
+
+#include <iostream>
+#include "HNode.h"
+#include <vector>
+#include <algorithm>
+
+
+class HTree {
+private:
+	HNode* koren;
+public:
+	HTree();
+	virtual ~HTree();
+
+	void kreirajStablo(int *nizFrekvencija);
+	HNode* getKoren() const {return koren;}
+};
+
+#endif /* HTREE_H_ */

@@ -1,0 +1,70 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Oct 29, 2026
+ *      Author: filip
+ */
+
+#include <iostream>
+#include <filesystem>
+
+#include "Program.h"
+
+void pozoviZa(std::string fajl);
+void PozoviOdrTip(std::string tip);
+void pozoviSve();
+
+int main()
+{
+	pozoviSve();
+}
+
+void pozoviZa(std::string fajl)
+{
+    std::string ulazni = fajl+".txt";
+    std::string izlazni = fajl + ".hff";
+    std::string dekodirani = fajl + "_dekodirani.txt"; //treba fajl + dekodirani// nece nesto
+
+    std::cout << "Zapoceto enkodiranje: " << ulazni << std::endl;
+    Program p(ulazni, fajl + ".hff");
+
+    double velicinaUlaznog = std::filesystem::file_size(ulazni);
+    double velicinaKompresovanog = std::filesystem::file_size(izlazni);
+
+    double stepenKompresije = 100.0 * (1.0 - (static_cast<double>(velicinaKompresovanog) / velicinaUlaznog));
+
+    std::cout << "GOTOVA KOMPRESIJA:" << std::endl;
+    std::cout << "Originalna velicina:              " << velicinaUlaznog << " bajtova" << std::endl;
+    std::cout << "Kompresovana velicina (sa recnikom): " << velicinaKompresovanog << " bajtova" << std::endl;
+    std::cout << "Stepen kompresije:                " << stepenKompresije << " %" << std::endl;
+
+
+    //std::cout << "Zapoceto Dekodiranje:" << std::endl;
+    p.dekodirajIzFajla(izlazni, dekodirani);
+    //std::cout << "Dekodiranje uspesno zavrseno. Izlaz: " << dekodirani << "\n";
+}
+
+void PozoviOdrTip(std::string tip)
+{
+
+	pozoviZa(tip+"/100");
+	pozoviZa(tip+"/1000");
+	pozoviZa(tip+"/10k");
+	pozoviZa(tip+"/100k");
+	pozoviZa(tip+"/1M");
+	pozoviZa(tip+"/10M");
+}
+
+void pozoviSve()
+{
+	std::cout << "Pozivam za LoremIpsum karaktere" << std::endl << std::endl;
+	PozoviOdrTip("LoremIpsumC");
+
+	std::cout << "Pozivam za RandomChar karaktere" << std::endl << std::endl;
+	PozoviOdrTip("RandomChar");
+
+//	std::cout << "Pozivam za LoremIpsum ali broj stringova" << std::endl << std::endl;
+//	PozoviOdrTip("LoremIpsum");
+
+
+}

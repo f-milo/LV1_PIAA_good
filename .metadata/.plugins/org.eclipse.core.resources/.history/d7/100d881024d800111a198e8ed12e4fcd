@@ -1,0 +1,24 @@
+/*
+ * HNode.cpp
+ *
+ *  Created on: Nov 4, 2026
+ *      Author: filip
+ */
+
+#include "HNode.h"
+
+HNode::HNode() {
+	// TODO Auto-generated constructor stub
+
+}
+
+HNode::HNode(char _znak, int _frekvencija) {
+}
+
+HNode::HNode(HNode *_levi, HNode *_desni) {
+}
+
+HNode::~HNode() {
+	// TODO Auto-generated destructor stub
+}
+

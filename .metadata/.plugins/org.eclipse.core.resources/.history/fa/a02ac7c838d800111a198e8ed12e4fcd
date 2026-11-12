@@ -1,0 +1,35 @@
+/*
+ * BitWriter.h
+ *
+ *  Created on: Nov 4, 2026
+ *      Author: filip
+ */
+
+#ifndef BITWRITER_H_
+#define BITWRITER_H_
+#include <iostream>
+#include <fstream>
+#include <string>
+
+class BitWriter {
+private:
+	unsigned char bafer = 0;
+	int brojBitovaUBaferu = 0;
+
+public:
+	std::ofstream file;
+
+	BitWriter(const std::string& imeFajla);
+	~BitWriter();
+
+	void dodajBitUBafer(int bit);
+	void dodajBitoveIzStringa(const std::string& bitovi);
+
+	void upisiBaferUFajl();
+	void upisiPreostaleBitove();
+
+	void upisiInt(int broj);
+
+};
+
+#endif /* BITWRITER_H_ */

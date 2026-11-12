@@ -1,0 +1,35 @@
+/*
+ * Program.cpp
+ *
+ *  Created on: Oct 30, 2026
+ *      Author: filip
+ */
+
+#include "Program.h"
+
+
+Program::Program(std::string fname) {
+	this->fname = fname;
+
+	std::ifstream f(fname, std::ios::binary);
+
+	if(!f.is_open())
+	{
+		std::cout << "Neuspesno otvoren fajl";
+		return;
+	}
+}
+
+Program::~Program() {
+}
+
+void Program::generisiKodove(HNode *cvor, std::string trenutniKod,
+		std::map<char, std::string> &tabelaKodova) {
+}
+
+void Program::kodirajUFajl(std::string ulazniFajl, std::string izlazniFajl) {
+}
+
+void Program::dekodirajIzFajla(std::string ulazniKompresovaniFajl,
+		std::string izlazniDekodiraniFajl) {
+}

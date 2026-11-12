@@ -1,0 +1,9 @@
+/*
+ * BitWriter.cpp
+ *
+ *  Created on: Nov 4, 2026
+ *      Author: filip
+ */
+
+#include "BitWriter.h"
+

@@ -1,0 +1,65 @@
+/*
+ * BitWriter.cpp
+ *
+ *  Created on: Oct 31, 2026
+ *      Author: filip
+ */
+
+#include "BitWriter.h"
+
+BitWriter::BitWriter(const std::string &imeFajla)
+{
+	file.open(imeFajla, std::ios::binary);
+	if(!file.is_open())
+	{
+		std::cout << "Greska pri otvaranju izlaznog fajla!" << std::endl;
+	}
+}
+
+BitWriter::~BitWriter()
+{
+}
+
+void BitWriter::dodajBitUBafer(int bit)
+{
+	bafer = (bafer << 1) | (bit & 1);
+	brojBitovaUBaferu++;
+
+	if(brojBitovaUBaferu == 8)
+	{
+		upisiBaferUFajl();
+	}
+}
+
+void BitWriter::dodajBitoveIzStringa(const std::string &kod)
+{
+	for(int i=0; i<kod.size(); i++)
+	{
+		char c = kod[i];
+		int bit = c - '0';
+
+		dodajBitUBafer(bit);
+	}
+}
+
+void BitWriter::upisiBaferUFajl()
+{
+	file.put(bafer);
+	bafer= 0;
+	brojBitovaUBaferu = 0;
+}
+
+void BitWriter::upisiPreostaleBitove()
+{
+	if(brojBitovaUBaferu > 0)
+	{
+		bafer <<= (8- brojBitovaUBaferu);
+
+		file.put(bafer);
+		bafer = 0;
+		brojBitovaUBaferu = 0;
+	}
+}
+
+void BitWriter::upisiInt(int broj) {
+}

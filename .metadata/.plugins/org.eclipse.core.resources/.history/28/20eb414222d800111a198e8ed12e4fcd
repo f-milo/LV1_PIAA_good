@@ -1,0 +1,17 @@
+/*
+ * HNode.h
+ *
+ *  Created on: Nov 4, 2026
+ *      Author: filip
+ */
+
+#ifndef HNODE_H_
+#define HNODE_H_
+
+class HNode {
+public:
+	HNode();
+	virtual ~HNode();
+};
+
+#endif /* HNODE_H_ */

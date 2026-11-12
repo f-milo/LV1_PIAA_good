@@ -1,0 +1,1737 @@
+09:34:01 **** Clean-only build of configuration Debug for project LV1 ****
+make clean 
+rm -rf ./src/HNode.d ./src/HNode.o ./src/HTree.d ./src/HTree.o ./src/main.d ./src/main.o
+rm -rf LV1
+ 
+09:34:04 **** Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/HNode.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HNode.d" -MT"src/HNode.o" -o "src/HNode.o" "../src/HNode.cpp"
+Finished building: ../src/HNode.cpp
+ 
+Building file: ../src/HTree.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HTree.d" -MT"src/HTree.o" -o "src/HTree.o" "../src/HTree.cpp"
+../src/HTree.cpp: In member function ‘void HTree::kreirajStablo(int*)’:
+../src/HTree.cpp:37:27: error: ‘size’ was not declared in this scope; did you mean ‘std::size’?
+   37 |         while(nizKorisnih,size() > 1)
+      |                           ^~~~
+      |                           std::size
+In file included from /usr/include/c++/13/string:53,
+                 from /usr/include/c++/13/bits/locale_classes.h:40,
+                 from /usr/include/c++/13/bits/ios_base.h:41,
+                 from /usr/include/c++/13/ios:44,
+                 from /usr/include/c++/13/ostream:40,
+                 from /usr/include/c++/13/iostream:41,
+                 from ../src/HTree.h:11,
+                 from ../src/HTree.cpp:8:
+/usr/include/c++/13/bits/range_access.h:274:5: note: ‘std::size’ declared here
+  274 |     size(const _Tp (&)[_Nm]) noexcept
+      |     ^~~~
+../src/HTree.cpp: In lambda function:
+../src/HTree.cpp:48:102: error: expected ‘{’ before ‘)’ token
+   48 |                 std::sort(nizKorisnih.begin(), nizKorisnih.end(), [] (const HNode* a, const HNode* b))
+      |                                                                                                      ^
+../src/HTree.cpp: In member function ‘void HTree::kreirajStablo(int*)’:
+../src/HTree.cpp:48:103: error: expected ‘;’ before ‘{’ token
+   48 |                 std::sort(nizKorisnih.begin(), nizKorisnih.end(), [] (const HNode* a, const HNode* b))
+      |                                                                                                       ^
+      |                                                                                                       ;
+   49 |                 {
+      |                 ~                                                                                      
+../src/HTree.cpp:51:18: error: expected primary-expression before ‘)’ token
+   51 |                 });
+      |                  ^
+In file included from /usr/include/c++/13/bits/stl_algobase.h:71,
+                 from /usr/include/c++/13/string:51:
+/usr/include/c++/13/bits/predefined_ops.h: In instantiation of ‘constexpr bool __gnu_cxx::__ops::_Iter_comp_iter<_Compare>::operator()(_Iterator1, _Iterator2) [with _Iterator1 = __gnu_cxx::__normal_iterator<HNode**, std::vector<HNode*> >; _Iterator2 = __gnu_cxx::__normal_iterator<HNode**, std::vector<HNode*> >; _Compare = HTree::kreirajStablo(int*)::<lambda(const HNode*, const HNode*)>]’:
+/usr/include/c++/13/bits/stl_algo.h:1819:14:   required from ‘void std::__insertion_sort(_RandomAccessIterator, _RandomAccessIterator, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<HNode**, vector<HNode*> >; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<HTree::kreirajStablo(int*)::<lambda(const HNode*, const HNode*)> >]’
+/usr/include/c++/13/bits/stl_algo.h:1859:25:   required from ‘void std::__final_insertion_sort(_RandomAccessIterator, _RandomAccessIterator, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<HNode**, vector<HNode*> >; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<HTree::kreirajStablo(int*)::<lambda(const HNode*, const HNode*)> >]’
+/usr/include/c++/13/bits/stl_algo.h:1950:31:   required from ‘void std::__sort(_RandomAccessIterator, _RandomAccessIterator, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<HNode**, vector<HNode*> >; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<HTree::kreirajStablo(int*)::<lambda(const HNode*, const HNode*)> >]’
+/usr/include/c++/13/bits/stl_algo.h:4894:18:   required from ‘void std::sort(_RAIter, _RAIter, _Compare) [with _RAIter = __gnu_cxx::__normal_iterator<HNode**, vector<HNode*> >; _Compare = HTree::kreirajStablo(int*)::<lambda(const HNode*, const HNode*)>]’
+../src/HTree.cpp:48:12:   required from here
+/usr/include/c++/13/bits/predefined_ops.h:158:30: error: void value not ignored as it ought to be
+  158 |         { return bool(_M_comp(*__it1, *__it2)); }
+      |                       ~~~~~~~^~~~~~~~~~~~~~~~
+/usr/include/c++/13/bits/predefined_ops.h: In instantiation of ‘bool __gnu_cxx::__ops::_Val_comp_iter<_Compare>::operator()(_Value&, _Iterator) [with _Value = HNode*; _Iterator = __gnu_cxx::__normal_iterator<HNode**, std::vector<HNode*> >; _Compare = HTree::kreirajStablo(int*)::<lambda(const HNode*, const HNode*)>]’:
+/usr/include/c++/13/bits/stl_algo.h:1799:20:   required from ‘void std::__unguarded_linear_insert(_RandomAccessIterator, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<HNode**, vector<HNode*> >; _Compare = __gnu_cxx::__ops::_Val_comp_iter<HTree::kreirajStablo(int*)::<lambda(const HNode*, const HNode*)> >]’
+/usr/include/c++/13/bits/stl_algo.h:1827:36:   required from ‘void std::__insertion_sort(_RandomAccessIterator, _RandomAccessIterator, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<HNode**, vector<HNode*> >; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<HTree::kreirajStablo(int*)::<lambda(const HNode*, const HNode*)> >]’
+/usr/include/c++/13/bits/stl_algo.h:1859:25:   required from ‘void std::__final_insertion_sort(_RandomAccessIterator, _RandomAccessIterator, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<HNode**, vector<HNode*> >; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<HTree::kreirajStablo(int*)::<lambda(const HNode*, const HNode*)> >]’
+/usr/include/c++/13/bits/stl_algo.h:1950:31:   required from ‘void std::__sort(_RandomAccessIterator, _RandomAccessIterator, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<HNode**, vector<HNode*> >; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<HTree::kreirajStablo(int*)::<lambda(const HNode*, const HNode*)> >]’
+/usr/include/c++/13/bits/stl_algo.h:4894:18:   required from ‘void std::sort(_RAIter, _RAIter, _Compare) [with _RAIter = __gnu_cxx::__normal_iterator<HNode**, vector<HNode*> >; _Compare = HTree::kreirajStablo(int*)::<lambda(const HNode*, const HNode*)>]’
+../src/HTree.cpp:48:12:   required from here
+/usr/include/c++/13/bits/predefined_ops.h:240:30: error: void value not ignored as it ought to be
+  240 |         { return bool(_M_comp(__val, *__it)); }
+      |                       ~~~~~~~^~~~~~~~~~~~~~
+/usr/include/c++/13/bits/predefined_ops.h: In instantiation of ‘bool __gnu_cxx::__ops::_Iter_comp_val<_Compare>::operator()(_Iterator, _Value&) [with _Iterator = __gnu_cxx::__normal_iterator<HNode**, std::vector<HNode*> >; _Value = HNode*; _Compare = HTree::kreirajStablo(int*)::<lambda(const HNode*, const HNode*)>]’:
+/usr/include/c++/13/bits/stl_heap.h:140:48:   required from ‘void std::__push_heap(_RandomAccessIterator, _Distance, _Distance, _Tp, _Compare&) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<HNode**, vector<HNode*> >; _Distance = long int; _Tp = HNode*; _Compare = __gnu_cxx::__ops::_Iter_comp_val<HTree::kreirajStablo(int*)::<lambda(const HNode*, const HNode*)> >]’
+/usr/include/c++/13/bits/stl_heap.h:247:23:   required from ‘void std::__adjust_heap(_RandomAccessIterator, _Distance, _Distance, _Tp, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<HNode**, vector<HNode*> >; _Distance = long int; _Tp = HNode*; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<HTree::kreirajStablo(int*)::<lambda(const HNode*, const HNode*)> >]’
+/usr/include/c++/13/bits/stl_heap.h:356:22:   required from ‘void std::__make_heap(_RandomAccessIterator, _RandomAccessIterator, _Compare&) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<HNode**, vector<HNode*> >; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<HTree::kreirajStablo(int*)::<lambda(const HNode*, const HNode*)> >]’
+/usr/include/c++/13/bits/stl_algo.h:1635:23:   required from ‘void std::__heap_select(_RandomAccessIterator, _RandomAccessIterator, _RandomAccessIterator, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<HNode**, vector<HNode*> >; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<HTree::kreirajStablo(int*)::<lambda(const HNode*, const HNode*)> >]’
+/usr/include/c++/13/bits/stl_algo.h:1910:25:   required from ‘void std::__partial_sort(_RandomAccessIterator, _RandomAccessIterator, _RandomAccessIterator, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<HNode**, vector<HNode*> >; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<HTree::kreirajStablo(int*)::<lambda(const HNode*, const HNode*)> >]’
+/usr/include/c++/13/bits/stl_algo.h:1926:27:   required from ‘void std::__introsort_loop(_RandomAccessIterator, _RandomAccessIterator, _Size, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<HNode**, vector<HNode*> >; _Size = long int; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<HTree::kreirajStablo(int*)::<lambda(const HNode*, const HNode*)> >]’
+/usr/include/c++/13/bits/stl_algo.h:1947:25:   required from ‘void std::__sort(_RandomAccessIterator, _RandomAccessIterator, _Compare) [with _RandomAccessIterator = __gnu_cxx::__normal_iterator<HNode**, vector<HNode*> >; _Compare = __gnu_cxx::__ops::_Iter_comp_iter<HTree::kreirajStablo(int*)::<lambda(const HNode*, const HNode*)> >]’
+/usr/include/c++/13/bits/stl_algo.h:4894:18:   required from ‘void std::sort(_RAIter, _RAIter, _Compare) [with _RAIter = __gnu_cxx::__normal_iterator<HNode**, vector<HNode*> >; _Compare = HTree::kreirajStablo(int*)::<lambda(const HNode*, const HNode*)>]’
+../src/HTree.cpp:48:12:   required from here
+/usr/include/c++/13/bits/predefined_ops.h:196:30: error: void value not ignored as it ought to be
+  196 |         { return bool(_M_comp(*__it, __val)); }
+      |                       ~~~~~~~^~~~~~~~~~~~~~
+make: *** [src/subdir.mk:26: src/HTree.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+09:35:16 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/HTree.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HTree.d" -MT"src/HTree.o" -o "src/HTree.o" "../src/HTree.cpp"
+Finished building: ../src/HTree.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/HNode.o ./src/HTree.o ./src/main.o   
+Finished building target: LV1
+ 
+09:42:33 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/HNode.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HNode.d" -MT"src/HNode.o" -o "src/HNode.o" "../src/HNode.cpp"
+Finished building: ../src/HNode.cpp
+ 
+Building file: ../src/HTree.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HTree.d" -MT"src/HTree.o" -o "src/HTree.o" "../src/HTree.cpp"
+Finished building: ../src/HTree.cpp
+ 
+Building file: ../src/Program.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Program.d" -MT"src/Program.o" -o "src/Program.o" "../src/Program.cpp"
+Finished building: ../src/Program.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+09:48:17 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/Program.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Program.d" -MT"src/Program.o" -o "src/Program.o" "../src/Program.cpp"
+../src/Program.cpp: In constructor ‘Program::Program(std::string)’:
+../src/Program.cpp:13:25: error: variable ‘std::ifstream f’ has initializer but incomplete type
+   13 |         std::ifstream f(fname, std::ios::binary);
+      |                         ^~~~~
+make: *** [src/subdir.mk:29: src/Program.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+09:51:33 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/Program.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Program.d" -MT"src/Program.o" -o "src/Program.o" "../src/Program.cpp"
+Finished building: ../src/Program.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+09:55:52 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/Program.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Program.d" -MT"src/Program.o" -o "src/Program.o" "../src/Program.cpp"
+In file included from ../src/Program.cpp:8:
+../src/Program.h:24:42: error: ‘fnameIzlazni’ has not been declared
+   24 |         Program(std::string fnameUlazni, fnameIzlazni);
+      |                                          ^~~~~~~~~~~~
+../src/Program.cpp:11:1: error: no declaration matches ‘Program::Program(std::string, std::string)’
+   11 | Program::Program(std::string fnameUlazni, std::string fnameIzlazni) {
+      | ^~~~~~~
+../src/Program.h:18:7: note: candidates are: ‘Program::Program(const Program&)’
+   18 | class Program {
+      |       ^~~~~~~
+../src/Program.h:24:9: note:                 ‘Program::Program(std::string, int)’
+   24 |         Program(std::string fnameUlazni, fnameIzlazni);
+      |         ^~~~~~~
+../src/Program.h:18:7: note: ‘class Program’ defined here
+   18 | class Program {
+      |       ^~~~~~~
+make: *** [src/subdir.mk:29: src/Program.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+09:56:07 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/Program.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Program.d" -MT"src/Program.o" -o "src/Program.o" "../src/Program.cpp"
+../src/Program.cpp: In constructor ‘Program::Program(std::string, std::string)’:
+../src/Program.cpp:26:44: error: ‘unigned’ does not name a type; did you mean ‘unsigned’?
+   26 |                 nizFrekvencija[static_cast<unigned char>(c)]++;
+      |                                            ^~~~~~~
+      |                                            unsigned
+../src/Program.cpp:26:52: error: expected ‘>’ before ‘char’
+   26 |                 nizFrekvencija[static_cast<unigned char>(c)]++;
+      |                                                    ^~~~
+../src/Program.cpp:26:52: error: expected ‘(’ before ‘char’
+   26 |                 nizFrekvencija[static_cast<unigned char>(c)]++;
+      |                                                    ^~~~
+      |                                                    (
+../src/Program.cpp:26:52: error: expected primary-expression before ‘char’
+   26 |                 nizFrekvencija[static_cast<unigned char>(c)]++;
+      |                                                    ^~~~
+../src/Program.cpp:26:51: error: expected ‘)’ before ‘char’
+   26 |                 nizFrekvencija[static_cast<unigned char>(c)]++;
+      |                                                   ^~~~~
+      |                                                   )
+../src/Program.cpp:26:51: error: expected ‘]’ before ‘char’
+   26 |                 nizFrekvencija[static_cast<unigned char>(c)]++;
+      |                                                   ^~~~~
+      |                                                   ]
+../src/Program.cpp:31:9: error: ‘stablo’ was not declared in this scope
+   31 |         stablo.kreirajStablo(nizFrekvencija);
+      |         ^~~~~~
+../src/Program.cpp:33:35: error: expected ‘;’ before ‘}’ token
+   33 |         kodirajUFajl(fname, fname)
+      |                                   ^
+      |                                   ;
+   34 | }
+      | ~                                  
+make: *** [src/subdir.mk:29: src/Program.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+09:56:45 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/Program.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Program.d" -MT"src/Program.o" -o "src/Program.o" "../src/Program.cpp"
+../src/Program.cpp: In constructor ‘Program::Program(std::string, std::string)’:
+../src/Program.cpp:26:44: error: ‘unigned’ does not name a type; did you mean ‘unsigned’?
+   26 |                 nizFrekvencija[static_cast<unigned char>(c)]++;
+      |                                            ^~~~~~~
+      |                                            unsigned
+../src/Program.cpp:26:52: error: expected ‘>’ before ‘char’
+   26 |                 nizFrekvencija[static_cast<unigned char>(c)]++;
+      |                                                    ^~~~
+../src/Program.cpp:26:52: error: expected ‘(’ before ‘char’
+   26 |                 nizFrekvencija[static_cast<unigned char>(c)]++;
+      |                                                    ^~~~
+      |                                                    (
+../src/Program.cpp:26:52: error: expected primary-expression before ‘char’
+   26 |                 nizFrekvencija[static_cast<unigned char>(c)]++;
+      |                                                    ^~~~
+../src/Program.cpp:26:51: error: expected ‘)’ before ‘char’
+   26 |                 nizFrekvencija[static_cast<unigned char>(c)]++;
+      |                                                   ^~~~~
+      |                                                   )
+../src/Program.cpp:26:51: error: expected ‘]’ before ‘char’
+   26 |                 nizFrekvencija[static_cast<unigned char>(c)]++;
+      |                                                   ^~~~~
+      |                                                   ]
+../src/Program.cpp:31:9: error: ‘stablo’ was not declared in this scope
+   31 |         stablo.kreirajStablo(nizFrekvencija);
+      |         ^~~~~~
+make: *** [src/subdir.mk:29: src/Program.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+09:58:46 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/Program.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Program.d" -MT"src/Program.o" -o "src/Program.o" "../src/Program.cpp"
+../src/Program.cpp: In constructor ‘Program::Program(std::string, std::string)’:
+../src/Program.cpp:31:9: error: ‘stablo’ was not declared in this scope
+   31 |         stablo.kreirajStablo(nizFrekvencija);
+      |         ^~~~~~
+make: *** [src/subdir.mk:29: src/Program.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+09:59:12 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/Program.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Program.d" -MT"src/Program.o" -o "src/Program.o" "../src/Program.cpp"
+Finished building: ../src/Program.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+11:10:25 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/Program.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Program.d" -MT"src/Program.o" -o "src/Program.o" "../src/Program.cpp"
+../src/Program.cpp: In member function ‘void Program::generisiKodove(HNode*, std::string, std::map<char, std::__cxx11::basic_string<char> >&)’:
+../src/Program.cpp:48:20: error: ‘trKod’ was not declared in this scope; did you mean ‘strtod’?
+   48 |                 if(trKod.empty())
+      |                    ^~~~~
+      |                    strtod
+../src/Program.cpp:52:47: error: ‘trKod’ was not declared in this scope; did you mean ‘strtod’?
+   52 |                 tabelaKodova[n1->getZnak()] = trKod;
+      |                                               ^~~~~
+      |                                               strtod
+../src/Program.cpp:56:27: error: request for member ‘getLevi’ in ‘n1’, which is of pointer type ‘HNode*’ (maybe you meant to use ‘->’ ?)
+   56 |         generisiKodove(n1.getLevi(), trKod + "0", tabelaKodova);
+      |                           ^~~~~~~
+../src/Program.cpp:56:38: error: ‘trKod’ was not declared in this scope; did you mean ‘strtod’?
+   56 |         generisiKodove(n1.getLevi(), trKod + "0", tabelaKodova);
+      |                                      ^~~~~
+      |                                      strtod
+../src/Program.cpp: In member function ‘void Program::kodirajUFajl(std::string, std::string)’:
+../src/Program.cpp:61:9: error: ‘map’ was not declared in this scope
+   61 |         map<char, std::string> tabelaKodova;
+      |         ^~~
+../src/Program.cpp:61:9: note: suggested alternatives:
+In file included from /usr/include/c++/13/map:63,
+                 from ../src/Program.h:13,
+                 from ../src/Program.cpp:8:
+/usr/include/c++/13/bits/stl_map.h:102:11: note:   ‘std::map’
+  102 |     class map
+      |           ^~~
+/usr/include/c++/13/map:80:13: note:   ‘std::pmr::map’
+   80 |       using map
+      |             ^~~
+../src/Program.cpp:61:13: error: expected primary-expression before ‘char’
+   61 |         map<char, std::string> tabelaKodova;
+      |             ^~~~
+../src/Program.cpp:63:47: error: ‘tabelaKodova’ was not declared in this scope
+   63 |         generisiKodove(stablo.getKoren(), "", tabelaKodova);
+      |                                               ^~~~~~~~~~~~
+../src/Program.cpp:65:40: error: ‘ios’ has not been declared
+   65 |         std::ifstream ulaz(ulazniFajl, ios::binary);
+      |                                        ^~~
+../src/Program.cpp:72:9: error: ‘BitWriter’ was not declared in this scope
+   72 |         BitWriter writer(izlazniFajl);
+      |         ^~~~~~~~~
+../src/Program.cpp:76:17: error: ‘writer’ was not declared in this scope; did you mean ‘fwrite’?
+   76 |                 writer.upisiInt(nizFrekvencija[i]);
+      |                 ^~~~~~
+      |                 fwrite
+../src/Program.cpp:81:17: error: ‘string’ was not declared in this scope
+   81 |                 string kod = tabelaKodova[c];
+      |                 ^~~~~~
+../src/Program.cpp:81:17: note: suggested alternatives:
+In file included from /usr/include/c++/13/iosfwd:41,
+                 from /usr/include/c++/13/ios:40,
+                 from /usr/include/c++/13/ostream:40,
+                 from /usr/include/c++/13/iostream:41,
+                 from ../src/Program.h:10:
+/usr/include/c++/13/bits/stringfwd.h:77:33: note:   ‘std::string’
+   77 |   typedef basic_string<char>    string;
+      |                                 ^~~~~~
+In file included from /usr/include/c++/13/bits/locale_classes.h:40,
+                 from /usr/include/c++/13/bits/ios_base.h:41,
+                 from /usr/include/c++/13/ios:44:
+/usr/include/c++/13/string:66:11: note:   ‘std::pmr::string’
+   66 |     using string    = basic_string<char>;
+      |           ^~~~~~
+../src/Program.cpp:82:17: error: ‘writer’ was not declared in this scope; did you mean ‘fwrite’?
+   82 |                 writer.dodaj
+      |                 ^~~~~~
+      |                 fwrite
+../src/Program.cpp: At global scope:
+../src/Program.cpp:85:1: error: expected declaration before ‘}’ token
+   85 | }
+      | ^
+../src/Program.cpp: In member function ‘void Program::dekodirajIzFajla(std::string, std::string)’:
+../src/Program.cpp:89:13: warning: unused variable ‘ucitaneFrekvencije’ [-Wunused-variable]
+   89 |         int ucitaneFrekvencije[256] = {0};
+      |             ^~~~~~~~~~~~~~~~~~
+../src/Program.cpp:90:23: warning: unused variable ‘ukupanBrojKaraktera’ [-Wunused-variable]
+   90 |         unsigned long ukupanBrojKaraktera = 0;
+      |                       ^~~~~~~~~~~~~~~~~~~
+make: *** [src/subdir.mk:29: src/Program.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:25:30 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/BitWriter.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BitWriter.d" -MT"src/BitWriter.o" -o "src/BitWriter.o" "../src/BitWriter.cpp"
+../src/BitWriter.cpp: In member function ‘void BitWriter::dodajBitoveIzStringa(const std::string&)’:
+../src/BitWriter.cpp:36:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::__cxx11::basic_string<char>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+   36 |         for(int i=0; i<kod.size(); i++)
+      |                      ~^~~~~~~~~~~
+Finished building: ../src/BitWriter.cpp
+ 
+Building file: ../src/HNode.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HNode.d" -MT"src/HNode.o" -o "src/HNode.o" "../src/HNode.cpp"
+Finished building: ../src/HNode.cpp
+ 
+Building file: ../src/HTree.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HTree.d" -MT"src/HTree.o" -o "src/HTree.o" "../src/HTree.cpp"
+Finished building: ../src/HTree.cpp
+ 
+Building file: ../src/Program.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Program.d" -MT"src/Program.o" -o "src/Program.o" "../src/Program.cpp"
+../src/Program.cpp: In member function ‘void Program::generisiKodove(HNode*, std::string, std::map<char, std::__cxx11::basic_string<char> >&)’:
+../src/Program.cpp:52:47: error: ‘trKod’ was not declared in this scope; did you mean ‘strtod’?
+   52 |                 tabelaKodova[n1->getZnak()] = trKod;
+      |                                               ^~~~~
+      |                                               strtod
+../src/Program.cpp:56:27: error: request for member ‘getLevi’ in ‘n1’, which is of pointer type ‘HNode*’ (maybe you meant to use ‘->’ ?)
+   56 |         generisiKodove(n1.getLevi(), trenutniKod + "0", tabelaKodova);
+      |                           ^~~~~~~
+../src/Program.cpp: In member function ‘void Program::kodirajUFajl(std::string, std::string)’:
+../src/Program.cpp:61:9: error: ‘map’ was not declared in this scope
+   61 |         map<char, std::string> tabelaKodova;
+      |         ^~~
+../src/Program.cpp:61:9: note: suggested alternatives:
+In file included from /usr/include/c++/13/map:63,
+                 from ../src/Program.h:13,
+                 from ../src/Program.cpp:8:
+/usr/include/c++/13/bits/stl_map.h:102:11: note:   ‘std::map’
+  102 |     class map
+      |           ^~~
+/usr/include/c++/13/map:80:13: note:   ‘std::pmr::map’
+   80 |       using map
+      |             ^~~
+../src/Program.cpp:61:13: error: expected primary-expression before ‘char’
+   61 |         map<char, std::string> tabelaKodova;
+      |             ^~~~
+../src/Program.cpp:63:47: error: ‘tabelaKodova’ was not declared in this scope
+   63 |         generisiKodove(stablo.getKoren(), "", tabelaKodova);
+      |                                               ^~~~~~~~~~~~
+../src/Program.cpp:65:40: error: ‘ios’ has not been declared
+   65 |         std::ifstream ulaz(ulazniFajl, ios::binary);
+      |                                        ^~~
+../src/Program.cpp:72:9: error: ‘BitWriter’ was not declared in this scope
+   72 |         BitWriter writer(izlazniFajl);
+      |         ^~~~~~~~~
+../src/Program.cpp:76:17: error: ‘writer’ was not declared in this scope; did you mean ‘fwrite’?
+   76 |                 writer.upisiInt(nizFrekvencija[i]);
+      |                 ^~~~~~
+      |                 fwrite
+../src/Program.cpp:81:17: error: ‘string’ was not declared in this scope
+   81 |                 string kod = tabelaKodova[c];
+      |                 ^~~~~~
+../src/Program.cpp:81:17: note: suggested alternatives:
+In file included from /usr/include/c++/13/iosfwd:41,
+                 from /usr/include/c++/13/ios:40,
+                 from /usr/include/c++/13/ostream:40,
+                 from /usr/include/c++/13/iostream:41,
+                 from ../src/Program.h:10:
+/usr/include/c++/13/bits/stringfwd.h:77:33: note:   ‘std::string’
+   77 |   typedef basic_string<char>    string;
+      |                                 ^~~~~~
+In file included from /usr/include/c++/13/bits/locale_classes.h:40,
+                 from /usr/include/c++/13/bits/ios_base.h:41,
+                 from /usr/include/c++/13/ios:44:
+/usr/include/c++/13/string:66:11: note:   ‘std::pmr::string’
+   66 |     using string    = basic_string<char>;
+      |           ^~~~~~
+../src/Program.cpp:82:17: error: ‘writer’ was not declared in this scope; did you mean ‘fwrite’?
+   82 |                 writer.dodaj
+      |                 ^~~~~~
+      |                 fwrite
+../src/Program.cpp: At global scope:
+../src/Program.cpp:85:1: error: expected declaration before ‘}’ token
+   85 | }
+      | ^
+../src/Program.cpp: In member function ‘void Program::dekodirajIzFajla(std::string, std::string)’:
+../src/Program.cpp:89:13: warning: unused variable ‘ucitaneFrekvencije’ [-Wunused-variable]
+   89 |         int ucitaneFrekvencije[256] = {0};
+      |             ^~~~~~~~~~~~~~~~~~
+../src/Program.cpp:90:23: warning: unused variable ‘ukupanBrojKaraktera’ [-Wunused-variable]
+   90 |         unsigned long ukupanBrojKaraktera = 0;
+      |                       ^~~~~~~~~~~~~~~~~~~
+make: *** [src/subdir.mk:32: src/Program.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:46:13 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/BitReader.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BitReader.d" -MT"src/BitReader.o" -o "src/BitReader.o" "../src/BitReader.cpp"
+Finished building: ../src/BitReader.cpp
+ 
+Building file: ../src/BitWriter.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BitWriter.d" -MT"src/BitWriter.o" -o "src/BitWriter.o" "../src/BitWriter.cpp"
+../src/BitWriter.cpp: In member function ‘void BitWriter::dodajBitoveIzStringa(const std::string&)’:
+../src/BitWriter.cpp:42:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::__cxx11::basic_string<char>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+   42 |         for(int i=0; i<kod.size(); i++)
+      |                      ~^~~~~~~~~~~
+Finished building: ../src/BitWriter.cpp
+ 
+Building file: ../src/HNode.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HNode.d" -MT"src/HNode.o" -o "src/HNode.o" "../src/HNode.cpp"
+Finished building: ../src/HNode.cpp
+ 
+Building file: ../src/HTree.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HTree.d" -MT"src/HTree.o" -o "src/HTree.o" "../src/HTree.cpp"
+Finished building: ../src/HTree.cpp
+ 
+Building file: ../src/Program.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Program.d" -MT"src/Program.o" -o "src/Program.o" "../src/Program.cpp"
+../src/Program.cpp: In member function ‘void Program::generisiKodove(HNode*, std::string, std::map<char, std::__cxx11::basic_string<char> >&)’:
+../src/Program.cpp:52:47: error: ‘trKod’ was not declared in this scope; did you mean ‘strtod’?
+   52 |                 tabelaKodova[n1->getZnak()] = trKod;
+      |                                               ^~~~~
+      |                                               strtod
+../src/Program.cpp:56:27: error: request for member ‘getLevi’ in ‘n1’, which is of pointer type ‘HNode*’ (maybe you meant to use ‘->’ ?)
+   56 |         generisiKodove(n1.getLevi(), trenutniKod + "0", tabelaKodova);
+      |                           ^~~~~~~
+../src/Program.cpp: In member function ‘void Program::kodirajUFajl(std::string, std::string)’:
+../src/Program.cpp:61:9: error: ‘map’ was not declared in this scope
+   61 |         map<char, std::string> tabelaKodova;
+      |         ^~~
+../src/Program.cpp:61:9: note: suggested alternatives:
+In file included from /usr/include/c++/13/map:63,
+                 from ../src/Program.h:13,
+                 from ../src/Program.cpp:8:
+/usr/include/c++/13/bits/stl_map.h:102:11: note:   ‘std::map’
+  102 |     class map
+      |           ^~~
+/usr/include/c++/13/map:80:13: note:   ‘std::pmr::map’
+   80 |       using map
+      |             ^~~
+../src/Program.cpp:61:13: error: expected primary-expression before ‘char’
+   61 |         map<char, std::string> tabelaKodova;
+      |             ^~~~
+../src/Program.cpp:63:47: error: ‘tabelaKodova’ was not declared in this scope
+   63 |         generisiKodove(stablo.getKoren(), "", tabelaKodova);
+      |                                               ^~~~~~~~~~~~
+../src/Program.cpp:65:40: error: ‘ios’ has not been declared
+   65 |         std::ifstream ulaz(ulazniFajl, ios::binary);
+      |                                        ^~~
+../src/Program.cpp:72:9: error: ‘BitWriter’ was not declared in this scope
+   72 |         BitWriter writer(izlazniFajl);
+      |         ^~~~~~~~~
+../src/Program.cpp:76:17: error: ‘writer’ was not declared in this scope; did you mean ‘fwrite’?
+   76 |                 writer.upisiInt(nizFrekvencija[i]);
+      |                 ^~~~~~
+      |                 fwrite
+../src/Program.cpp:81:17: error: ‘string’ was not declared in this scope
+   81 |                 string kod = tabelaKodova[c];
+      |                 ^~~~~~
+../src/Program.cpp:81:17: note: suggested alternatives:
+In file included from /usr/include/c++/13/iosfwd:41,
+                 from /usr/include/c++/13/ios:40,
+                 from /usr/include/c++/13/ostream:40,
+                 from /usr/include/c++/13/iostream:41,
+                 from ../src/Program.h:10:
+/usr/include/c++/13/bits/stringfwd.h:77:33: note:   ‘std::string’
+   77 |   typedef basic_string<char>    string;
+      |                                 ^~~~~~
+In file included from /usr/include/c++/13/bits/locale_classes.h:40,
+                 from /usr/include/c++/13/bits/ios_base.h:41,
+                 from /usr/include/c++/13/ios:44:
+/usr/include/c++/13/string:66:11: note:   ‘std::pmr::string’
+   66 |     using string    = basic_string<char>;
+      |           ^~~~~~
+../src/Program.cpp:82:17: error: ‘writer’ was not declared in this scope; did you mean ‘fwrite’?
+   82 |                 writer.dodaj
+      |                 ^~~~~~
+      |                 fwrite
+../src/Program.cpp: At global scope:
+../src/Program.cpp:85:1: error: expected declaration before ‘}’ token
+   85 | }
+      | ^
+../src/Program.cpp: In member function ‘void Program::dekodirajIzFajla(std::string, std::string)’:
+../src/Program.cpp:89:13: warning: unused variable ‘ucitaneFrekvencije’ [-Wunused-variable]
+   89 |         int ucitaneFrekvencije[256] = {0};
+      |             ^~~~~~~~~~~~~~~~~~
+../src/Program.cpp:90:23: warning: unused variable ‘ukupanBrojKaraktera’ [-Wunused-variable]
+   90 |         unsigned long ukupanBrojKaraktera = 0;
+      |                       ^~~~~~~~~~~~~~~~~~~
+make: *** [src/subdir.mk:35: src/Program.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:47:27 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/Program.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Program.d" -MT"src/Program.o" -o "src/Program.o" "../src/Program.cpp"
+../src/Program.cpp: In member function ‘void Program::generisiKodove(HNode*, std::string, std::map<char, std::__cxx11::basic_string<char> >&)’:
+../src/Program.cpp:56:27: error: request for member ‘getLevi’ in ‘n1’, which is of pointer type ‘HNode*’ (maybe you meant to use ‘->’ ?)
+   56 |         generisiKodove(n1.getLevi(), trenutniKod + "0", tabelaKodova);
+      |                           ^~~~~~~
+../src/Program.cpp: In member function ‘void Program::kodirajUFajl(std::string, std::string)’:
+../src/Program.cpp:63:30: error: base operand of ‘->’ has non-pointer type ‘HTree’
+   63 |         generisiKodove(stablo->getKoren(), "", tabelaKodova);
+      |                              ^~
+../src/Program.cpp:72:9: error: ‘BitWriter’ was not declared in this scope
+   72 |         BitWriter writer(izlazniFajl);
+      |         ^~~~~~~~~
+../src/Program.cpp:76:17: error: ‘writer’ was not declared in this scope; did you mean ‘fwrite’?
+   76 |                 writer.upisiInt(nizFrekvencija[i]);
+      |                 ^~~~~~
+      |                 fwrite
+../src/Program.cpp:81:17: error: ‘string’ was not declared in this scope
+   81 |                 string kod = tabelaKodova[c];
+      |                 ^~~~~~
+../src/Program.cpp:81:17: note: suggested alternatives:
+In file included from /usr/include/c++/13/iosfwd:41,
+                 from /usr/include/c++/13/ios:40,
+                 from /usr/include/c++/13/ostream:40,
+                 from /usr/include/c++/13/iostream:41,
+                 from ../src/Program.h:10,
+                 from ../src/Program.cpp:8:
+/usr/include/c++/13/bits/stringfwd.h:77:33: note:   ‘std::string’
+   77 |   typedef basic_string<char>    string;
+      |                                 ^~~~~~
+In file included from /usr/include/c++/13/bits/locale_classes.h:40,
+                 from /usr/include/c++/13/bits/ios_base.h:41,
+                 from /usr/include/c++/13/ios:44:
+/usr/include/c++/13/string:66:11: note:   ‘std::pmr::string’
+   66 |     using string    = basic_string<char>;
+      |           ^~~~~~
+../src/Program.cpp:82:17: error: ‘writer’ was not declared in this scope; did you mean ‘fwrite’?
+   82 |                 writer.dodaj
+      |                 ^~~~~~
+      |                 fwrite
+../src/Program.cpp: At global scope:
+../src/Program.cpp:85:1: error: expected declaration before ‘}’ token
+   85 | }
+      | ^
+../src/Program.cpp: In member function ‘void Program::dekodirajIzFajla(std::string, std::string)’:
+../src/Program.cpp:89:13: warning: unused variable ‘ucitaneFrekvencije’ [-Wunused-variable]
+   89 |         int ucitaneFrekvencije[256] = {0};
+      |             ^~~~~~~~~~~~~~~~~~
+../src/Program.cpp:90:23: warning: unused variable ‘ukupanBrojKaraktera’ [-Wunused-variable]
+   90 |         unsigned long ukupanBrojKaraktera = 0;
+      |                       ^~~~~~~~~~~~~~~~~~~
+make: *** [src/subdir.mk:35: src/Program.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:49:04 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/Program.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Program.d" -MT"src/Program.o" -o "src/Program.o" "../src/Program.cpp"
+../src/Program.cpp: In member function ‘void Program::kodirajUFajl(std::string, std::string)’:
+../src/Program.cpp:82:12: error: ‘class BitWriter’ has no member named ‘zatvoriFajl’
+   82 |     writer.zatvoriFajl();
+      |            ^~~~~~~~~~~
+../src/Program.cpp: In member function ‘void Program::dekodirajIzFajla(std::string, std::string)’:
+../src/Program.cpp:107:16: error: ‘class BitReader’ has no member named ‘zatvoriFajl’
+  107 |         reader.zatvoriFajl();
+      |                ^~~~~~~~~~~
+../src/Program.cpp:116:16: error: ‘class BitReader’ has no member named ‘zatvoriFajl’
+  116 |         reader.zatvoriFajl();
+      |                ^~~~~~~~~~~
+../src/Program.cpp:127:16: error: ‘class BitReader’ has no member named ‘zatvoriFajl’
+  127 |         reader.zatvoriFajl();
+      |                ^~~~~~~~~~~
+../src/Program.cpp:160:12: error: ‘class BitReader’ has no member named ‘zatvoriFajl’
+  160 |     reader.zatvoriFajl();
+      |            ^~~~~~~~~~~
+make: *** [src/subdir.mk:35: src/Program.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:50:47 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/BitReader.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BitReader.d" -MT"src/BitReader.o" -o "src/BitReader.o" "../src/BitReader.cpp"
+Finished building: ../src/BitReader.cpp
+ 
+Building file: ../src/BitWriter.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BitWriter.d" -MT"src/BitWriter.o" -o "src/BitWriter.o" "../src/BitWriter.cpp"
+../src/BitWriter.cpp: In member function ‘void BitWriter::dodajBitoveIzStringa(const std::string&)’:
+../src/BitWriter.cpp:42:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::__cxx11::basic_string<char>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+   42 |         for(int i=0; i<kod.size(); i++)
+      |                      ~^~~~~~~~~~~
+Finished building: ../src/BitWriter.cpp
+ 
+Building file: ../src/Program.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Program.d" -MT"src/Program.o" -o "src/Program.o" "../src/Program.cpp"
+Finished building: ../src/Program.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+11:50:53 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:51:55 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:21:21: error: no matching function for call to ‘Program::Program(std::string&)’
+   21 |     Program p(ulazni);
+      |                     ^
+In file included from ../src/main.cpp:11:
+../src/Program.h:28:9: note: candidate: ‘Program::Program(std::string, std::string)’
+   28 |         Program(std::string fnameUlazni, std::string fnameIzlazni);
+      |         ^~~~~~~
+../src/Program.h:28:9: note:   candidate expects 2 arguments, 1 provided
+../src/Program.h:21:7: note: candidate: ‘Program::Program(const Program&)’
+   21 | class Program {
+      |       ^~~~~~~
+../src/Program.h:21:7: note:   no known conversion for argument 1 from ‘std::string’ {aka ‘std::__cxx11::basic_string<char>’} to ‘const Program&’
+make: *** [src/subdir.mk:35: src/main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:51:58 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:21:21: error: no matching function for call to ‘Program::Program(std::string&)’
+   21 |     Program p(ulazni);
+      |                     ^
+In file included from ../src/main.cpp:11:
+../src/Program.h:28:9: note: candidate: ‘Program::Program(std::string, std::string)’
+   28 |         Program(std::string fnameUlazni, std::string fnameIzlazni);
+      |         ^~~~~~~
+../src/Program.h:28:9: note:   candidate expects 2 arguments, 1 provided
+../src/Program.h:21:7: note: candidate: ‘Program::Program(const Program&)’
+   21 | class Program {
+      |       ^~~~~~~
+../src/Program.h:21:7: note:   no known conversion for argument 1 from ‘std::string’ {aka ‘std::__cxx11::basic_string<char>’} to ‘const Program&’
+make: *** [src/subdir.mk:35: src/main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:52:22 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:21:21: error: no matching function for call to ‘Program::Program(std::string&)’
+   21 |     Program p(ulazni);
+      |                     ^
+In file included from ../src/main.cpp:11:
+../src/Program.h:28:9: note: candidate: ‘Program::Program(std::string, std::string)’
+   28 |         Program(std::string fnameUlazni, std::string fnameIzlazni);
+      |         ^~~~~~~
+../src/Program.h:28:9: note:   candidate expects 2 arguments, 1 provided
+../src/Program.h:21:7: note: candidate: ‘Program::Program(const Program&)’
+   21 | class Program {
+      |       ^~~~~~~
+../src/Program.h:21:7: note:   no known conversion for argument 1 from ‘std::string’ {aka ‘std::__cxx11::basic_string<char>’} to ‘const Program&’
+make: *** [src/subdir.mk:35: src/main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:53:05 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+11:53:08 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:54:20 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:04:18 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:04:19 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:04:21 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:04:34 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+12:05:02 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+12:05:11 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+12:05:25 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:05:38 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+12:05:57 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+12:06:07 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+12:06:18 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+12:06:25 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+14:51:56 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/Program.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Program.d" -MT"src/Program.o" -o "src/Program.o" "../src/Program.cpp"
+../src/Program.cpp: In member function ‘void Program::dekodirajIzFajla(std::string, std::string)’:
+../src/Program.cpp:104:59: error: expected ‘;’ before ‘std’
+  104 |         std::cout << "Greska pri otvaranju izlaznog fajla" std::endl;
+      |                                                           ^~~~
+      |                                                           ;
+make: *** [src/subdir.mk:35: src/Program.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+14:52:15 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/Program.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Program.d" -MT"src/Program.o" -o "src/Program.o" "../src/Program.cpp"
+Finished building: ../src/Program.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+15:06:48 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/Program.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Program.d" -MT"src/Program.o" -o "src/Program.o" "../src/Program.cpp"
+../src/Program.cpp: In constructor ‘Program::Program(std::string, std::string)’:
+../src/Program.cpp:20:25: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+   20 |         nizFrekvencija[(c)]++;
+      |                        ~^~
+Finished building: ../src/Program.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+15:06:59 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/Program.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Program.d" -MT"src/Program.o" -o "src/Program.o" "../src/Program.cpp"
+../src/Program.cpp: In constructor ‘Program::Program(std::string, std::string)’:
+../src/Program.cpp:20:24: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+   20 |         nizFrekvencija[c]++;
+      |                        ^
+Finished building: ../src/Program.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+15:07:02 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+15:19:01 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+15:20:03 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+15:31:02 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+15:31:52 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+15:31:55 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+15:32:26 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+15:32:29 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+15:33:18 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+15:33:21 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+15:33:59 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+15:34:01 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+15:34:38 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+15:34:40 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+15:35:20 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+15:35:22 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+15:36:38 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+15:36:39 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+15:37:16 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+15:37:18 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+15:38:06 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+15:38:09 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+15:38:34 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+15:38:35 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+15:39:50 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+15:39:51 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+15:41:05 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+15:41:20 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+15:41:21 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+15:41:27 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+15:50:37 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:19:35: error: no match for ‘operator<<’ (operand types are ‘std::basic_ostream<char>’ and ‘std::ostream’ {aka ‘std::basic_ostream<char>’})
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~ ^~ ~~~~~~~~~
+      |                   |                       |
+      |                   basic_ostream<[...]>    basic_ostream<[...]>
+../src/main.cpp:19:35: note: candidate: ‘operator<<(int, int)’ (built-in)
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+../src/main.cpp:19:35: note:   no known conversion for argument 2 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘int’
+In file included from /usr/include/c++/13/iostream:41,
+                 from ../src/main.cpp:8:
+/usr/include/c++/13/ostream:110:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(__ostream_type& (*)(__ostream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  110 |       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:110:36: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘std::basic_ostream<char>::__ostream_type& (*)(std::basic_ostream<char>::__ostream_type&)’ {aka ‘std::basic_ostream<char>& (*)(std::basic_ostream<char>&)’}
+  110 |       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+      |                  ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/13/ostream:119:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(__ios_type& (*)(__ios_type&)) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>; __ios_type = std::basic_ios<char>]’
+  119 |       operator<<(__ios_type& (*__pf)(__ios_type&))
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:119:32: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘std::basic_ostream<char>::__ios_type& (*)(std::basic_ostream<char>::__ios_type&)’ {aka ‘std::basic_ios<char>& (*)(std::basic_ios<char>&)’}
+  119 |       operator<<(__ios_type& (*__pf)(__ios_type&))
+      |                  ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+/usr/include/c++/13/ostream:129:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base& (*)(std::ios_base&)) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  129 |       operator<<(ios_base& (*__pf) (ios_base&))
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:129:30: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘std::ios_base& (*)(std::ios_base&)’
+  129 |       operator<<(ios_base& (*__pf) (ios_base&))
+      |                  ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+/usr/include/c++/13/ostream:168:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long int) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  168 |       operator<<(long __n)
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:168:23: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘long int’
+  168 |       operator<<(long __n)
+      |                  ~~~~~^~~
+/usr/include/c++/13/ostream:172:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  172 |       operator<<(unsigned long __n)
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:172:32: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘long unsigned int’
+  172 |       operator<<(unsigned long __n)
+      |                  ~~~~~~~~~~~~~~^~~
+/usr/include/c++/13/ostream:176:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(bool) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  176 |       operator<<(bool __n)
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:176:23: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘bool’
+  176 |       operator<<(bool __n)
+      |                  ~~~~~^~~
+In file included from /usr/include/c++/13/ostream:880:
+/usr/include/c++/13/bits/ostream.tcc:96:5: note: candidate: ‘std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(short int) [with _CharT = char; _Traits = std::char_traits<char>]’
+   96 |     basic_ostream<_CharT, _Traits>::
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/13/bits/ostream.tcc:97:22: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘short int’
+   97 |     operator<<(short __n)
+      |                ~~~~~~^~~
+/usr/include/c++/13/ostream:183:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(short unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  183 |       operator<<(unsigned short __n)
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:183:33: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘short unsigned int’
+  183 |       operator<<(unsigned short __n)
+      |                  ~~~~~~~~~~~~~~~^~~
+/usr/include/c++/13/bits/ostream.tcc:110:5: note: candidate: ‘std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(int) [with _CharT = char; _Traits = std::char_traits<char>]’
+  110 |     basic_ostream<_CharT, _Traits>::
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/13/bits/ostream.tcc:111:20: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘int’
+  111 |     operator<<(int __n)
+      |                ~~~~^~~
+/usr/include/c++/13/ostream:194:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  194 |       operator<<(unsigned int __n)
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:194:31: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘unsigned int’
+  194 |       operator<<(unsigned int __n)
+      |                  ~~~~~~~~~~~~~^~~
+/usr/include/c++/13/ostream:203:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long int) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  203 |       operator<<(long long __n)
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:203:28: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘long long int’
+  203 |       operator<<(long long __n)
+      |                  ~~~~~~~~~~^~~
+/usr/include/c++/13/ostream:207:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  207 |       operator<<(unsigned long long __n)
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:207:37: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘long long unsigned int’
+  207 |       operator<<(unsigned long long __n)
+      |                  ~~~~~~~~~~~~~~~~~~~^~~
+/usr/include/c++/13/ostream:222:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(double) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  222 |       operator<<(double __f)
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:222:25: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘double’
+  222 |       operator<<(double __f)
+      |                  ~~~~~~~^~~
+/usr/include/c++/13/ostream:226:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(float) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  226 |       operator<<(float __f)
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:226:24: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘float’
+  226 |       operator<<(float __f)
+      |                  ~~~~~~^~~
+/usr/include/c++/13/ostream:234:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long double) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  234 |       operator<<(long double __f)
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:234:30: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘long double’
+  234 |       operator<<(long double __f)
+      |                  ~~~~~~~~~~~~^~~
+/usr/include/c++/13/ostream:292:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const void*) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  292 |       operator<<(const void* __p)
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:292:30: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘const void*’
+  292 |       operator<<(const void* __p)
+      |                  ~~~~~~~~~~~~^~~
+/usr/include/c++/13/ostream:297:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::nullptr_t) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>; std::nullptr_t = std::nullptr_t]’
+  297 |       operator<<(nullptr_t)
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:297:18: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘std::nullptr_t’
+  297 |       operator<<(nullptr_t)
+      |                  ^~~~~~~~~
+/usr/include/c++/13/bits/ostream.tcc:124:5: note: candidate: ‘std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(__streambuf_type*) [with _CharT = char; _Traits = std::char_traits<char>; __streambuf_type = std::basic_streambuf<char>]’
+  124 |     basic_ostream<_CharT, _Traits>::
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/13/bits/ostream.tcc:125:34: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘std::basic_ostream<char>::__streambuf_type*’ {aka ‘std::basic_streambuf<char>*’}
+  125 |     operator<<(__streambuf_type* __sbin)
+      |                ~~~~~~~~~~~~~~~~~~^~~~~~
+In file included from /usr/include/c++/13/bits/basic_string.h:47,
+                 from /usr/include/c++/13/string:54,
+                 from /usr/include/c++/13/bits/locale_classes.h:40,
+                 from /usr/include/c++/13/bits/ios_base.h:41,
+                 from /usr/include/c++/13/ios:44,
+                 from /usr/include/c++/13/ostream:40:
+/usr/include/c++/13/string_view:761:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, basic_string_view<_CharT, _Traits>)’
+  761 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+/usr/include/c++/13/string_view:761:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:19:43: note:   ‘std::basic_ostream<char>’ is not derived from ‘std::basic_string_view<_CharT, _Traits>’
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |                                           ^~~~
+/usr/include/c++/13/bits/basic_string.h:4032:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const __cxx11::basic_string<_CharT, _Traits, _Allocator>&)’
+ 4032 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+/usr/include/c++/13/bits/basic_string.h:4032:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:19:43: note:   ‘std::ostream’ {aka ‘std::basic_ostream<char>’} is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>’
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |                                           ^~~~
+In file included from /usr/include/c++/13/bits/memory_resource.h:38,
+                 from /usr/include/c++/13/string:58:
+/usr/include/c++/13/cstddef:124:5: note: candidate: ‘template<class _IntegerType> constexpr std::__byte_op_t<_IntegerType> std::operator<<(byte, _IntegerType)’
+  124 |     operator<<(byte __b, _IntegerType __shift) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/13/cstddef:124:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:19:19: note:   cannot convert ‘std::operator<< <char_traits<char> >(std::cout, ((const char*)"Pokrecem!!"))’ (type ‘std::basic_ostream<char>’) to type ‘std::byte’
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |         ~~~~~~~~~~^~~~~~~~~~~~~~~
+In file included from /usr/include/c++/13/bits/ios_base.h:46:
+/usr/include/c++/13/system_error:339:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const error_code&)’
+  339 |     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+      |     ^~~~~~~~
+/usr/include/c++/13/system_error:339:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:19:43: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘const std::error_code&’
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |                                      ~~~~~^~~~
+/usr/include/c++/13/ostream:554:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _CharT)’
+  554 |     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+      |     ^~~~~~~~
+/usr/include/c++/13/ostream:554:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:19:43: note:   deduced conflicting types for parameter ‘_CharT’ (‘char’ and ‘std::basic_ostream<char>’)
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |                                           ^~~~
+/usr/include/c++/13/ostream:564:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, char)’
+  564 |     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+/usr/include/c++/13/ostream:564:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:19:43: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘char’
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |                                      ~~~~~^~~~
+/usr/include/c++/13/ostream:570:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, char)’
+  570 |     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+/usr/include/c++/13/ostream:570:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:19:43: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘char’
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |                                      ~~~~~^~~~
+/usr/include/c++/13/ostream:581:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, signed char)’
+  581 |     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+      |     ^~~~~~~~
+/usr/include/c++/13/ostream:581:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:19:43: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘signed char’
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |                                      ~~~~~^~~~
+/usr/include/c++/13/ostream:586:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, unsigned char)’
+  586 |     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+      |     ^~~~~~~~
+/usr/include/c++/13/ostream:586:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:19:43: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘unsigned char’
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |                                      ~~~~~^~~~
+/usr/include/c++/13/ostream:645:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const _CharT*)’
+  645 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+      |     ^~~~~~~~
+/usr/include/c++/13/ostream:645:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:19:43: note:   mismatched types ‘const _CharT*’ and ‘std::basic_ostream<char>’
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |                                           ^~~~
+/usr/include/c++/13/bits/ostream.tcc:307:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const char*)’
+  307 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/13/bits/ostream.tcc:307:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:19:43: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘const char*’
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |                                      ~~~~~^~~~
+/usr/include/c++/13/ostream:662:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const char*)’
+  662 |     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/13/ostream:662:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:19:43: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘const char*’
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |                                      ~~~~~^~~~
+/usr/include/c++/13/ostream:675:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const signed char*)’
+  675 |     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/13/ostream:675:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:19:43: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘const signed char*’
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |                                      ~~~~~^~~~
+/usr/include/c++/13/ostream:680:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const unsigned char*)’
+  680 |     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/13/ostream:680:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:19:43: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘const unsigned char*’
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |                                      ~~~~~^~~~
+/usr/include/c++/13/ostream:801:5: note: candidate: ‘template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&)’
+  801 |     operator<<(_Ostream&& __os, const _Tp& __x)
+      |     ^~~~~~~~
+/usr/include/c++/13/ostream:801:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/13/ostream: In substitution of ‘template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&) [with _Ostream = std::basic_ostream<char>&; _Tp = std::basic_ostream<char>]’:
+../src/main.cpp:19:36:   required from here
+/usr/include/c++/13/ostream:801:5: error: no type named ‘type’ in ‘struct std::enable_if<false, void>’
+In file included from /usr/include/c++/13/bits/fs_path.h:38,
+                 from /usr/include/c++/13/filesystem:49,
+                 from ../src/main.cpp:9:
+/usr/include/c++/13/iomanip:81:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Resetiosflags)’
+   81 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Resetiosflags __f)
+      |     ^~~~~~~~
+/usr/include/c++/13/iomanip:81:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:19:43: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘std::_Resetiosflags’
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |                                      ~~~~~^~~~
+/usr/include/c++/13/iomanip:111:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setiosflags)’
+  111 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setiosflags __f)
+      |     ^~~~~~~~
+/usr/include/c++/13/iomanip:111:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:19:43: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘std::_Setiosflags’
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |                                      ~~~~~^~~~
+/usr/include/c++/13/iomanip:145:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setbase)’
+  145 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setbase __f)
+      |     ^~~~~~~~
+/usr/include/c++/13/iomanip:145:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:19:43: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘std::_Setbase’
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |                                      ~~~~~^~~~
+/usr/include/c++/13/iomanip:180:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setfill<_CharT>)’
+  180 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setfill<_CharT> __f)
+      |     ^~~~~~~~
+/usr/include/c++/13/iomanip:180:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:19:43: note:   ‘std::basic_ostream<char>’ is not derived from ‘std::_Setfill<_CharT>’
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |                                           ^~~~
+/usr/include/c++/13/iomanip:210:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setprecision)’
+  210 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setprecision __f)
+      |     ^~~~~~~~
+/usr/include/c++/13/iomanip:210:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:19:43: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘std::_Setprecision’
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |                                      ~~~~~^~~~
+/usr/include/c++/13/iomanip:240:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setw)’
+  240 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setw __f)
+      |     ^~~~~~~~
+/usr/include/c++/13/iomanip:240:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:19:43: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘std::_Setw’
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |                                      ~~~~~^~~~
+/usr/include/c++/13/iomanip:313:5: note: candidate: ‘template<class _CharT, class _Traits, class _MoneyT> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Put_money<_MoneyT>)’
+  313 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_money<_MoneyT> __f)
+      |     ^~~~~~~~
+/usr/include/c++/13/iomanip:313:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:19:43: note:   ‘std::basic_ostream<char>’ is not derived from ‘std::_Put_money<_MoneyT>’
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |                                           ^~~~
+/usr/include/c++/13/iomanip:365:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Put_time<_CharT>)’
+  365 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_time<_CharT> __f)
+      |     ^~~~~~~~
+/usr/include/c++/13/iomanip:365:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:19:43: note:   ‘std::basic_ostream<char>’ is not derived from ‘std::_Put_time<_CharT>’
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |                                           ^~~~
+In file included from /usr/include/c++/13/bits/fs_path.h:46:
+/usr/include/c++/13/bits/shared_ptr.h:70:5: note: candidate: ‘template<class _Ch, class _Tr, class _Tp, __gnu_cxx::_Lock_policy _Lp> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const __shared_ptr<_Tp, _Lp>&)’
+   70 |     operator<<(std::basic_ostream<_Ch, _Tr>& __os,
+      |     ^~~~~~~~
+/usr/include/c++/13/bits/shared_ptr.h:70:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:19:43: note:   ‘std::ostream’ {aka ‘std::basic_ostream<char>’} is not derived from ‘const std::__shared_ptr<_Tp, _Lp>’
+   19 |         std::cout << "Pokrecem!!" << std::cout;
+      |                                           ^~~~
+../src/main.cpp:21:39: error: no match for ‘operator<<’ (operand types are ‘std::basic_ostream<char>’ and ‘std::ostream’ {aka ‘std::basic_ostream<char>’})
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^~ ~~~~~~~~~
+      |                   |                           |
+      |                   basic_ostream<[...]>        basic_ostream<[...]>
+../src/main.cpp:21:39: note: candidate: ‘operator<<(int, int)’ (built-in)
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+../src/main.cpp:21:39: note:   no known conversion for argument 2 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘int’
+/usr/include/c++/13/ostream:110:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(__ostream_type& (*)(__ostream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  110 |       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:110:36: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘std::basic_ostream<char>::__ostream_type& (*)(std::basic_ostream<char>::__ostream_type&)’ {aka ‘std::basic_ostream<char>& (*)(std::basic_ostream<char>&)’}
+  110 |       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+      |                  ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/13/ostream:119:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(__ios_type& (*)(__ios_type&)) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>; __ios_type = std::basic_ios<char>]’
+  119 |       operator<<(__ios_type& (*__pf)(__ios_type&))
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:119:32: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘std::basic_ostream<char>::__ios_type& (*)(std::basic_ostream<char>::__ios_type&)’ {aka ‘std::basic_ios<char>& (*)(std::basic_ios<char>&)’}
+  119 |       operator<<(__ios_type& (*__pf)(__ios_type&))
+      |                  ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+/usr/include/c++/13/ostream:129:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base& (*)(std::ios_base&)) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  129 |       operator<<(ios_base& (*__pf) (ios_base&))
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:129:30: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘std::ios_base& (*)(std::ios_base&)’
+  129 |       operator<<(ios_base& (*__pf) (ios_base&))
+      |                  ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+/usr/include/c++/13/ostream:168:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long int) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  168 |       operator<<(long __n)
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:168:23: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘long int’
+  168 |       operator<<(long __n)
+      |                  ~~~~~^~~
+/usr/include/c++/13/ostream:172:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  172 |       operator<<(unsigned long __n)
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:172:32: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘long unsigned int’
+  172 |       operator<<(unsigned long __n)
+      |                  ~~~~~~~~~~~~~~^~~
+/usr/include/c++/13/ostream:176:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(bool) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  176 |       operator<<(bool __n)
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:176:23: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘bool’
+  176 |       operator<<(bool __n)
+      |                  ~~~~~^~~
+/usr/include/c++/13/bits/ostream.tcc:96:5: note: candidate: ‘std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(short int) [with _CharT = char; _Traits = std::char_traits<char>]’
+   96 |     basic_ostream<_CharT, _Traits>::
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/13/bits/ostream.tcc:97:22: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘short int’
+   97 |     operator<<(short __n)
+      |                ~~~~~~^~~
+/usr/include/c++/13/ostream:183:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(short unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  183 |       operator<<(unsigned short __n)
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:183:33: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘short unsigned int’
+  183 |       operator<<(unsigned short __n)
+      |                  ~~~~~~~~~~~~~~~^~~
+/usr/include/c++/13/bits/ostream.tcc:110:5: note: candidate: ‘std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(int) [with _CharT = char; _Traits = std::char_traits<char>]’
+  110 |     basic_ostream<_CharT, _Traits>::
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/13/bits/ostream.tcc:111:20: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘int’
+  111 |     operator<<(int __n)
+      |                ~~~~^~~
+/usr/include/c++/13/ostream:194:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  194 |       operator<<(unsigned int __n)
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:194:31: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘unsigned int’
+  194 |       operator<<(unsigned int __n)
+      |                  ~~~~~~~~~~~~~^~~
+/usr/include/c++/13/ostream:203:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long int) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  203 |       operator<<(long long __n)
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:203:28: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘long long int’
+  203 |       operator<<(long long __n)
+      |                  ~~~~~~~~~~^~~
+/usr/include/c++/13/ostream:207:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  207 |       operator<<(unsigned long long __n)
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:207:37: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘long long unsigned int’
+  207 |       operator<<(unsigned long long __n)
+      |                  ~~~~~~~~~~~~~~~~~~~^~~
+/usr/include/c++/13/ostream:222:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(double) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  222 |       operator<<(double __f)
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:222:25: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘double’
+  222 |       operator<<(double __f)
+      |                  ~~~~~~~^~~
+/usr/include/c++/13/ostream:226:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(float) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  226 |       operator<<(float __f)
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:226:24: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘float’
+  226 |       operator<<(float __f)
+      |                  ~~~~~~^~~
+/usr/include/c++/13/ostream:234:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long double) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  234 |       operator<<(long double __f)
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:234:30: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘long double’
+  234 |       operator<<(long double __f)
+      |                  ~~~~~~~~~~~~^~~
+/usr/include/c++/13/ostream:292:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const void*) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’
+  292 |       operator<<(const void* __p)
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:292:30: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘const void*’
+  292 |       operator<<(const void* __p)
+      |                  ~~~~~~~~~~~~^~~
+/usr/include/c++/13/ostream:297:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::nullptr_t) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>; std::nullptr_t = std::nullptr_t]’
+  297 |       operator<<(nullptr_t)
+      |       ^~~~~~~~
+/usr/include/c++/13/ostream:297:18: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘std::nullptr_t’
+  297 |       operator<<(nullptr_t)
+      |                  ^~~~~~~~~
+/usr/include/c++/13/bits/ostream.tcc:124:5: note: candidate: ‘std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(__streambuf_type*) [with _CharT = char; _Traits = std::char_traits<char>; __streambuf_type = std::basic_streambuf<char>]’
+  124 |     basic_ostream<_CharT, _Traits>::
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/13/bits/ostream.tcc:125:34: note:   no known conversion for argument 1 from ‘std::ostream’ {aka ‘std::basic_ostream<char>’} to ‘std::basic_ostream<char>::__streambuf_type*’ {aka ‘std::basic_streambuf<char>*’}
+  125 |     operator<<(__streambuf_type* __sbin)
+      |                ~~~~~~~~~~~~~~~~~~^~~~~~
+/usr/include/c++/13/string_view:761:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, basic_string_view<_CharT, _Traits>)’
+  761 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+/usr/include/c++/13/string_view:761:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:21:47: note:   ‘std::basic_ostream<char>’ is not derived from ‘std::basic_string_view<_CharT, _Traits>’
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |                                               ^~~~
+/usr/include/c++/13/bits/basic_string.h:4032:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const __cxx11::basic_string<_CharT, _Traits, _Allocator>&)’
+ 4032 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+/usr/include/c++/13/bits/basic_string.h:4032:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:21:47: note:   ‘std::ostream’ {aka ‘std::basic_ostream<char>’} is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>’
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |                                               ^~~~
+/usr/include/c++/13/cstddef:124:5: note: candidate: ‘template<class _IntegerType> constexpr std::__byte_op_t<_IntegerType> std::operator<<(byte, _IntegerType)’
+  124 |     operator<<(byte __b, _IntegerType __shift) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/13/cstddef:124:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:21:19: note:   cannot convert ‘std::operator<< <char_traits<char> >(std::cout, ((const char*)"Kraj kodiranja"))’ (type ‘std::basic_ostream<char>’) to type ‘std::byte’
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |         ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+/usr/include/c++/13/system_error:339:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const error_code&)’
+  339 |     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+      |     ^~~~~~~~
+/usr/include/c++/13/system_error:339:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:21:47: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘const std::error_code&’
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |                                          ~~~~~^~~~
+/usr/include/c++/13/ostream:554:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _CharT)’
+  554 |     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+      |     ^~~~~~~~
+/usr/include/c++/13/ostream:554:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:21:47: note:   deduced conflicting types for parameter ‘_CharT’ (‘char’ and ‘std::basic_ostream<char>’)
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |                                               ^~~~
+/usr/include/c++/13/ostream:564:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, char)’
+  564 |     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+/usr/include/c++/13/ostream:564:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:21:47: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘char’
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |                                          ~~~~~^~~~
+/usr/include/c++/13/ostream:570:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, char)’
+  570 |     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+/usr/include/c++/13/ostream:570:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:21:47: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘char’
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |                                          ~~~~~^~~~
+/usr/include/c++/13/ostream:581:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, signed char)’
+  581 |     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+      |     ^~~~~~~~
+/usr/include/c++/13/ostream:581:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:21:47: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘signed char’
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |                                          ~~~~~^~~~
+/usr/include/c++/13/ostream:586:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, unsigned char)’
+  586 |     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+      |     ^~~~~~~~
+/usr/include/c++/13/ostream:586:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:21:47: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘unsigned char’
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |                                          ~~~~~^~~~
+/usr/include/c++/13/ostream:645:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const _CharT*)’
+  645 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+      |     ^~~~~~~~
+/usr/include/c++/13/ostream:645:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:21:47: note:   mismatched types ‘const _CharT*’ and ‘std::basic_ostream<char>’
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |                                               ^~~~
+/usr/include/c++/13/bits/ostream.tcc:307:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const char*)’
+  307 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/13/bits/ostream.tcc:307:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:21:47: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘const char*’
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |                                          ~~~~~^~~~
+/usr/include/c++/13/ostream:662:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const char*)’
+  662 |     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/13/ostream:662:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:21:47: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘const char*’
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |                                          ~~~~~^~~~
+/usr/include/c++/13/ostream:675:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const signed char*)’
+  675 |     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/13/ostream:675:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:21:47: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘const signed char*’
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |                                          ~~~~~^~~~
+/usr/include/c++/13/ostream:680:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const unsigned char*)’
+  680 |     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/13/ostream:680:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:21:47: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘const unsigned char*’
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |                                          ~~~~~^~~~
+/usr/include/c++/13/ostream:801:5: note: candidate: ‘template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&)’
+  801 |     operator<<(_Ostream&& __os, const _Tp& __x)
+      |     ^~~~~~~~
+/usr/include/c++/13/ostream:801:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/13/ostream: In substitution of ‘template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&) [with _Ostream = std::basic_ostream<char>&; _Tp = std::basic_ostream<char>]’:
+../src/main.cpp:21:40:   required from here
+/usr/include/c++/13/ostream:801:5: error: no type named ‘type’ in ‘struct std::enable_if<false, void>’
+/usr/include/c++/13/iomanip:81:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Resetiosflags)’
+   81 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Resetiosflags __f)
+      |     ^~~~~~~~
+/usr/include/c++/13/iomanip:81:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:21:47: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘std::_Resetiosflags’
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |                                          ~~~~~^~~~
+/usr/include/c++/13/iomanip:111:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setiosflags)’
+  111 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setiosflags __f)
+      |     ^~~~~~~~
+/usr/include/c++/13/iomanip:111:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:21:47: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘std::_Setiosflags’
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |                                          ~~~~~^~~~
+/usr/include/c++/13/iomanip:145:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setbase)’
+  145 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setbase __f)
+      |     ^~~~~~~~
+/usr/include/c++/13/iomanip:145:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:21:47: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘std::_Setbase’
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |                                          ~~~~~^~~~
+/usr/include/c++/13/iomanip:180:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setfill<_CharT>)’
+  180 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setfill<_CharT> __f)
+      |     ^~~~~~~~
+/usr/include/c++/13/iomanip:180:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:21:47: note:   ‘std::basic_ostream<char>’ is not derived from ‘std::_Setfill<_CharT>’
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |                                               ^~~~
+/usr/include/c++/13/iomanip:210:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setprecision)’
+  210 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setprecision __f)
+      |     ^~~~~~~~
+/usr/include/c++/13/iomanip:210:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:21:47: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘std::_Setprecision’
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |                                          ~~~~~^~~~
+/usr/include/c++/13/iomanip:240:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setw)’
+  240 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setw __f)
+      |     ^~~~~~~~
+/usr/include/c++/13/iomanip:240:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:21:47: note:   cannot convert ‘std::cout’ (type ‘std::ostream’ {aka ‘std::basic_ostream<char>’}) to type ‘std::_Setw’
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |                                          ~~~~~^~~~
+/usr/include/c++/13/iomanip:313:5: note: candidate: ‘template<class _CharT, class _Traits, class _MoneyT> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Put_money<_MoneyT>)’
+  313 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_money<_MoneyT> __f)
+      |     ^~~~~~~~
+/usr/include/c++/13/iomanip:313:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:21:47: note:   ‘std::basic_ostream<char>’ is not derived from ‘std::_Put_money<_MoneyT>’
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |                                               ^~~~
+/usr/include/c++/13/iomanip:365:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Put_time<_CharT>)’
+  365 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_time<_CharT> __f)
+      |     ^~~~~~~~
+/usr/include/c++/13/iomanip:365:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:21:47: note:   ‘std::basic_ostream<char>’ is not derived from ‘std::_Put_time<_CharT>’
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |                                               ^~~~
+/usr/include/c++/13/bits/shared_ptr.h:70:5: note: candidate: ‘template<class _Ch, class _Tr, class _Tp, __gnu_cxx::_Lock_policy _Lp> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const __shared_ptr<_Tp, _Lp>&)’
+   70 |     operator<<(std::basic_ostream<_Ch, _Tr>& __os,
+      |     ^~~~~~~~
+/usr/include/c++/13/bits/shared_ptr.h:70:5: note:   template argument deduction/substitution failed:
+../src/main.cpp:21:47: note:   ‘std::ostream’ {aka ‘std::basic_ostream<char>’} is not derived from ‘const std::__shared_ptr<_Tp, _Lp>’
+   21 |         std::cout << "Kraj kodiranja" << std::cout;
+      |                                               ^~~~
+make: *** [src/subdir.mk:35: src/main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+15:50:55 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+15:50:58 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+15:52:19 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: LV1
+Invoking: GCC C++ Linker
+g++  -o "LV1" ./src/BitReader.o ./src/BitWriter.o ./src/HNode.o ./src/HTree.o ./src/Program.o ./src/main.o   
+Finished building target: LV1
+ 
+15:52:34 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
+15:52:41 **** Incremental Build of configuration Debug for project LV1 ****
+make all 
+make: Nothing to be done for 'all'.
